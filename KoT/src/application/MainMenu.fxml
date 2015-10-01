@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="568.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-9.0" layoutY="-7.0">
+         <image>
+            <Image url="@../images/MainMenu%20Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="218.0" fitWidth="310.0" layoutX="7.0" layoutY="7.0">
+         <image>
+            <Image url="@../images/King%20Of%20Tokyo%20Logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="333.0" fitWidth="393.0" layoutX="40.0" layoutY="85.0">
+         <image>
+            <Image url="@../images/BrokenGlass.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="258.0" layoutY="36.0" prefHeight="382.0" prefWidth="275.0" spacing="20.0">
+         <children>
+            <Button fx:id="NewGameButton" mnemonicParsing="false" onAction="#NewGameButtonAction" onMouseEntered="#NewGameArrowEnter" onMouseExited="#NewGameArrowExit" prefHeight="65.0" prefWidth="200.0" styleClass="NewGameButton" stylesheets="@application.css" text="New Game" textFill="WHITE">
+               <font>
+                  <Font name="Seven Monkey Fury BB" size="31.0" />
+               </font></Button>
+            <Button fx:id="JoinGameButton" mnemonicParsing="false" onMouseEntered="#JoinGameArrowEnter" onMouseExited="#JoinGameArrowExit" prefHeight="65.0" prefWidth="200.0" styleClass="Button" stylesheets="@application.css" text="Join Game" textFill="WHITE">
+               <font>
+                  <Font name="Seven Monkey Fury BB" size="31.0" />
+               </font></Button>
+            <Button fx:id="OptionsButton" mnemonicParsing="false" onMouseEntered="#OptionsArrowEnter" onMouseExited="#OptionsArrowExit" prefHeight="65.0" prefWidth="200.0" styleClass="Button" stylesheets="@application.css" text="Options" textFill="WHITE">
+               <font>
+                  <Font name="Seven Monkey Fury BB" size="31.0" />
+               </font></Button>
+            <Button fx:id="ExitGameButton" mnemonicParsing="false" onAction="#ExitGameButtonAction" onMouseEntered="#ExitArrowEnter" onMouseExited="#ExitArrowExit" prefHeight="65.0" prefWidth="200.0" styleClass="Button" stylesheets="@application.css" text="Exit" textFill="WHITE">
+               <font>
+                  <Font name="Seven Monkey Fury BB" size="31.0" />
+               </font></Button>
+         </children>
+      </VBox>
+      <ImageView fx:id="NewGameArrow" fitHeight="72.0" fitWidth="97.0" layoutX="498.0" layoutY="66.0" visible="false">
+         <image>
+            <Image url="@../images/SelectionArrow.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.19" contrast="1.0" hue="-1.0" saturation="-1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="JoinGameArrow" fitHeight="72.0" fitWidth="97.0" layoutX="498.0" layoutY="147.0" visible="false">
+         <image>
+            <Image url="@../images/SelectionArrow.png" />
+         </image>
+         <effect>
+            <ColorAdjust hue="-0.19" saturation="-1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="OptionsArrow" fitHeight="72.0" fitWidth="97.0" layoutX="498.0" layoutY="227.0" visible="false">
+         <image>
+            <Image url="@../images/SelectionArrow.png" />
+         </image>
+         <effect>
+            <ColorAdjust saturation="-1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="ExitArrow" fitHeight="72.0" fitWidth="97.0" layoutX="498.0" layoutY="317.0" visible="false">
+         <image>
+            <Image url="@../images/SelectionArrow.png" />
+         </image>
+         <effect>
+            <ColorAdjust saturation="-1.0" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

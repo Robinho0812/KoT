@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Michel Konrad -->
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MapController">
+   <children>
+      <ImageView fitHeight="950.0" fitWidth="1500.0">
+         <image>
+            <Image url="@../images/Light-Wood-Background-Wallpaper.jpg" />
+         </image>
+         <effect>
+            <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.0">
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="194.0" layoutX="1202.0" layoutY="505.0">
+         <image>
+            <Image url="@../images/MonsterTheKing_transparent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="175.0" layoutX="1211.0" layoutY="122.0">
+         <image>
+            <Image url="@../images/MonsterCyberBunny_transparent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="192.0" fitWidth="200.0" layoutX="24.0" layoutY="513.0">
+         <image>
+            <Image url="@../images/MonsterKraken_transparent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="182.0" layoutX="24.0" layoutY="143.0">
+         <image>
+            <Image url="@../images/MonsterGigaZaur_transparent.png" />
+         </image>
+      </ImageView>
+   	  <ImageView fitHeight="737.0" fitWidth="911.0" layoutX="272.0" layoutY="155.0">
+         <image>
+            <Image url="@../images/Spielplan.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="AttackButton" layoutX="349.0" layoutY="386.0" mnemonicParsing="false" onMouseEntered="#AttackButtonEnter" onMouseExited="#AttackButtonExit" opacity="0.0" prefHeight="183.0" prefWidth="238.0" text="TOKYO" />
+      <ImageView fx:id="DicePicture" fitHeight="200.0" fitWidth="200.0" layoutX="874.0" layoutY="155.0" visible="false">
+         <image>
+            <Image url="@../images/dice.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="DiceButton" layoutX="1049.0" layoutY="18.0" mnemonicParsing="false" onAction="#roll" onMouseEntered="#DiceButtonEnter" onMouseExited="#DiceButtonExit" prefHeight="59.0" prefWidth="134.0" text="Roll">
+         <font>
+            <Font name="Japanese Style" size="32.0" />
+         </font></Button>
+      <Text fill="WHITE" layoutX="82.0" layoutY="733.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1">
+         <font>
+            <Font name="AR ESSENCE" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="91.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2">
+         <font>
+            <Font name="AR ESSENCE" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="1255.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 3">
+         <font>
+            <Font name="AR ESSENCE" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="AttackText" fill="WHITE" layoutX="349.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attack!" visible="false" wrappingWidth="249.6708984375">
+         <font>
+            <Font name="Japanese Style" size="78.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="SwordAttack" layoutX="542.0" layoutY="368.0" visible="false">
+         <image>
+            <Image url="@../images/Attack%20Sword.gif" />
+         </image>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </ImageView>
+      <ToggleButton fx:id="tb1" layoutX="263.0" layoutY="47.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" styleClass="tb1" stylesheets="@application.css" visible="false">
+         <effect>
+            <ColorAdjust brightness="-0.1" />
+         </effect></ToggleButton>
+      <ToggleButton fx:id="tb1" layoutX="273.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDice1WithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb1" stylesheets="@application.css" />
+      <ToggleButton fx:id="tb2" layoutX="395.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDice2WithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb2" stylesheets="@application.css" />
+      <ToggleButton fx:id="tb3" layoutX="513.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDice3WithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb3" stylesheets="@application.css" />
+      <ToggleButton fx:id="tb4" layoutX="634.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDiceAttackWithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb3" stylesheets="@application.css" />
+      <ToggleButton fx:id="tb5" layoutX="756.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDiceHealWithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb5" stylesheets="@application.css" />
+      <ToggleButton fx:id="tb6" layoutX="888.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDiceEnergyWithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb6" stylesheets="@application.css" />
+      <Button fx:id="rerollButton" disable="true" layoutX="1049.0" layoutY="84.0" mnemonicParsing="false" onAction="#reroll" onMouseEntered="#RerollButtonEnter" onMouseExited="#RerollButtonExit" prefHeight="59.0" prefWidth="134.0" text="Reroll">
+         <font>
+            <Font name="Japanese Style" size="32.0" />
+         </font></Button>
+      <Text fill="WHITE" layoutX="1264.0" layoutY="733.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 4">
+         <font>
+            <Font name="AR ESSENCE" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="39.0" layoutY="374.0">
+         <image>
+            <Image url="@../images/HP.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="39.0" layoutY="760.0">
+         <image>
+            <Image url="@../images/HP.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="1225.0" layoutY="374.0">
+         <image>
+            <Image url="@../images/HP.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="1225.0" layoutY="760.0">
+         <image>
+            <Image url="@../images/HP.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="39.0" layoutY="429.0">
+         <image>
+            <Image url="@../images/VictoryPoints.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="0.0" specularConstant="2.0" specularExponent="0.0" surfaceScale="1.13">
+               <bumpInput>
+                  <Blend />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="39.0" layoutY="819.0">
+         <image>
+            <Image url="@../images/VictoryPoints.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="0.0" specularConstant="2.0" specularExponent="0.0" surfaceScale="10.0">
+               <bumpInput>
+                  <Shadow>
+                     <input>
+                        <Blend />
+                     </input>
+                  </Shadow>
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="1225.0" layoutY="429.0">
+         <effect>
+            <Lighting diffuseConstant="0.0" specularConstant="2.0" specularExponent="0.0" surfaceScale="1.13">
+               <bumpInput>
+                  <Blend />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <image>
+            <Image url="@../images/VictoryPoints.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="1225.0" layoutY="819.0">
+         <effect>
+            <Lighting diffuseConstant="0.0" specularConstant="2.0" specularExponent="0.0" surfaceScale="1.13">
+               <bumpInput>
+                  <Blend />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <image>
+            <Image url="@../images/VictoryPoints.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="RerollInfo" fill="WHITE" layoutX="1194.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Mark the dices you want to roll again)" visible="false" wrappingWidth="168.0">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
