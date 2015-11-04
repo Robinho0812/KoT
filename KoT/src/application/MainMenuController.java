@@ -32,7 +32,7 @@ public class MainMenuController { //michel k
 		Parent root;
 		
 		stage = (Stage) NewGameButton.getScene().getWindow(); //NewGameButton
-		root = FXMLLoader.load(getClass().getResource("Map.fxml"));
+		root = FXMLLoader.load(getClass().getResource("MonsterSelect.fxml"));
 		
 		
 		//Neue View wird eingefaded
@@ -42,10 +42,10 @@ public class MainMenuController { //michel k
 		ft.play();
 		
 		//Neue View wird angezeigt
-		Scene scene = new Scene(root,1500,950);
+		Scene scene = new Scene(root,950,839);
 		stage.setTitle("King Of Tokyo");
-		stage.setX(200); 					//stage mittig anzeigen (links/rechts)
-		stage.setY(30);						//stage mittig anzeigen (oben / unten)
+		stage.setX(450); 					//stage mittig anzeigen (links/rechts)
+		stage.setY(60);						//stage mittig anzeigen (oben / unten)
 		stage.setScene(scene);
 		stage.setResizable(false);
 		stage.show();

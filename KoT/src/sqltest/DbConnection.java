@@ -1,4 +1,4 @@
-package sql;
+package sqltest;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -150,13 +150,13 @@ public abstract class DbConnection {
 		}
 
 		if (i != 0) {
-			System.out.println("Server: name in use");
+			
 			return false;
 		}
 		if (i == 0)
 			return true;
-
-		System.out.println("Playername check failed");
+		
+		
 		return false;
 
 	}

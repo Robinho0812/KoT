@@ -26,38 +26,12 @@
             </Lighting>
          </effect>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="194.0" layoutX="1202.0" layoutY="505.0">
-         <image>
-            <Image url="@../images/MonsterTheKing_transparent.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="175.0" layoutX="1211.0" layoutY="122.0">
-         <image>
-            <Image url="@../images/MonsterCyberBunny_transparent.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="192.0" fitWidth="200.0" layoutX="24.0" layoutY="513.0">
-         <image>
-            <Image url="@../images/MonsterKraken_transparent.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="182.0" layoutX="24.0" layoutY="143.0">
-         <image>
-            <Image url="@../images/MonsterGigaZaur_transparent.png" />
-         </image>
-      </ImageView>
    	  <ImageView fitHeight="737.0" fitWidth="911.0" layoutX="272.0" layoutY="155.0">
          <image>
             <Image url="@../images/Spielplan.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="AttackButton" layoutX="349.0" layoutY="386.0" mnemonicParsing="false" onMouseEntered="#AttackButtonEnter" onMouseExited="#AttackButtonExit" opacity="0.0" prefHeight="183.0" prefWidth="238.0" text="TOKYO" />
-      <ImageView fx:id="DicePicture" fitHeight="200.0" fitWidth="200.0" layoutX="874.0" layoutY="155.0" visible="false">
-         <image>
-            <Image url="@../images/dice.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="DiceButton" layoutX="1049.0" layoutY="18.0" mnemonicParsing="false" onAction="#roll" onMouseEntered="#DiceButtonEnter" onMouseExited="#DiceButtonExit" prefHeight="59.0" prefWidth="134.0" text="Roll">
+      <Button fx:id="rollButton" layoutX="1165.0" layoutY="18.0" mnemonicParsing="false" onAction="#roll" prefHeight="59.0" prefWidth="168.0" text="Roll">
          <font>
             <Font name="Japanese Style" size="32.0" />
          </font></Button>
@@ -89,20 +63,6 @@
             <Glow level="1.0" />
          </effect>
       </ImageView>
-      <ToggleButton fx:id="tb1" layoutX="263.0" layoutY="47.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" styleClass="tb1" stylesheets="@application.css" visible="false">
-         <effect>
-            <ColorAdjust brightness="-0.1" />
-         </effect></ToggleButton>
-      <ToggleButton fx:id="tb1" layoutX="273.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDice1WithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb1" stylesheets="@application.css" />
-      <ToggleButton fx:id="tb2" layoutX="395.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDice2WithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb2" stylesheets="@application.css" />
-      <ToggleButton fx:id="tb3" layoutX="513.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDice3WithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb3" stylesheets="@application.css" />
-      <ToggleButton fx:id="tb4" layoutX="634.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDiceAttackWithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb3" stylesheets="@application.css" />
-      <ToggleButton fx:id="tb5" layoutX="756.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDiceHealWithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb5" stylesheets="@application.css" />
-      <ToggleButton fx:id="tb6" layoutX="888.0" layoutY="63.0" mnemonicParsing="false" onAction="#setImageOfDiceEnergyWithCross" prefHeight="59.0" prefWidth="59.0" styleClass="tb6" stylesheets="@application.css" />
-      <Button fx:id="rerollButton" disable="true" layoutX="1049.0" layoutY="84.0" mnemonicParsing="false" onAction="#reroll" onMouseEntered="#RerollButtonEnter" onMouseExited="#RerollButtonExit" prefHeight="59.0" prefWidth="134.0" text="Reroll">
-         <font>
-            <Font name="Japanese Style" size="32.0" />
-         </font></Button>
       <Text fill="WHITE" layoutX="1264.0" layoutY="733.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 4">
          <font>
             <Font name="AR ESSENCE" size="30.0" />
@@ -197,5 +157,11 @@
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
       </Text>
+      <HBox fx:id="hbDices" layoutX="302.0" layoutY="18.0" prefHeight="112.0" prefWidth="812.0" spacing="10.0" />
+      <Button fx:id="endturnButton" layoutX="1165.0" layoutY="84.0" mnemonicParsing="false" onAction="#endturnButtonAction" prefHeight="59.0" prefWidth="168.0" text="END TURN">
+         <font>
+            <Font name="Japanese Style" size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,11 +17,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 
 public class LoginController {
 	
 	@FXML 
 	Button LoginAcceptButton, RegisterButton;
+	@FXML TextField txtname;
+	@FXML PasswordField txtpw;
 
 	@FXML public void RegisterButtonAction (ActionEvent event) throws IOException {
 		
@@ -56,10 +62,18 @@ public class LoginController {
 	
 	
 	
-	@FXML public void LoginAcceptButtonAction (ActionEvent event) throws IOException {
+@FXML public void LoginAcceptButtonAction (ActionEvent event) throws IOException {
 		
 		Stage stage;
 		Parent root;
+		
+		sqltest.myConnection.openDb();
+		
+		boolean bool;
+		
+		bool = sqltest.myConnection.isValidLogin(txtname.getText(), sqltest.myConnection.hashPasswort(txtpw.getText()));
+		
+		if(bool == true){
 	
 		stage = (Stage) LoginAcceptButton.getScene().getWindow(); //LoginAcceptButton
 		root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -83,5 +97,11 @@ public class LoginController {
 		stage.setResizable(false);
 		stage.show();
 		}
+	else{
+		JOptionPane.showMessageDialog(null, "BOAH bist du ein hässlicher Idiot!!",
+				"Fehler", JOptionPane.ERROR_MESSAGE);
+		
+	}
+	}
 
 	}
