@@ -23,7 +23,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 /**
- * 
+ * Controller for the main game
  * @author Robin Schmid
  *
  */
@@ -53,12 +53,12 @@ public class MapController implements Initializable {
 	@FXML
 	Text RerollInfo;
 	
-	// Benötigte Variabeln
-	final int ANZAHLSPIELWÜRFEL = 6;
-	private int countAnzahlWürfe = 0;
+	// required values;
+	final int numberOfDices = 6;
+	private int countRolls = 0;
 
-	// Würfel-Objekte erzeugen
-	Dice[] gameDices = new Dice[ANZAHLSPIELWÜRFEL];
+	// generate Dice array
+	Dice[] gameDices = new Dice[numberOfDices];
 	static ArrayList<Integer> faceValues = new ArrayList<Integer>();
 
 
@@ -76,19 +76,21 @@ public class MapController implements Initializable {
 
 		rollButton.setDisable(false);
 
-		for (int i = 0; i < ANZAHLSPIELWÜRFEL; i++) {
+		// Generate new gameDices
+		for (int i = 0; i < numberOfDices; i++) {
 			gameDices[i] = new Dice();
 			gameDices[i].setDisable(true);
 			hbDices.getChildren().add(gameDices[i]);
 		}
 
+	// Action Events for each Dice
 		gameDices[0].setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent ae) {
-				if (gameDices[0].isSelected() && countAnzahlWürfe < 3) {
+				if (gameDices[0].isSelected() && countRolls < 3) {
 					gameDices[0].changeImageIfSelected();
-				} else if (countAnzahlWürfe < 3) {
+				} else if (countRolls < 3) {
 					gameDices[0].showToggleButton();
 				}
 
@@ -100,9 +102,9 @@ public class MapController implements Initializable {
 
 			@Override
 			public void handle(ActionEvent ae) {
-				if (gameDices[1].isSelected() && countAnzahlWürfe < 3) {
+				if (gameDices[1].isSelected() && countRolls < 3) {
 					gameDices[1].changeImageIfSelected();
-				} else if (countAnzahlWürfe < 3) {
+				} else if (countRolls < 3) {
 					gameDices[1].showToggleButton();
 				}
 
@@ -114,9 +116,9 @@ public class MapController implements Initializable {
 
 			@Override
 			public void handle(ActionEvent ae) {
-				if (gameDices[2].isSelected() && countAnzahlWürfe < 3) {
+				if (gameDices[2].isSelected() && countRolls < 3) {
 					gameDices[2].changeImageIfSelected();
-				} else if (countAnzahlWürfe < 3) {
+				} else if (countRolls < 3) {
 					gameDices[2].showToggleButton();
 				}
 
@@ -128,9 +130,9 @@ public class MapController implements Initializable {
 
 			@Override
 			public void handle(ActionEvent ae) {
-				if (gameDices[3].isSelected() && countAnzahlWürfe < 3) {
+				if (gameDices[3].isSelected() && countRolls < 3) {
 					gameDices[3].changeImageIfSelected();
-				} else if (countAnzahlWürfe < 3) {
+				} else if (countRolls < 3) {
 					gameDices[3].showToggleButton();
 				}
 
@@ -142,9 +144,9 @@ public class MapController implements Initializable {
 
 			@Override
 			public void handle(ActionEvent ae) {
-				if (gameDices[4].isSelected() && countAnzahlWürfe < 3) {
+				if (gameDices[4].isSelected() && countRolls < 3) {
 					gameDices[4].changeImageIfSelected();
-				} else if (countAnzahlWürfe < 3) {
+				} else if (countRolls < 3) {
 					gameDices[4].showToggleButton();
 				}
 
@@ -156,9 +158,9 @@ public class MapController implements Initializable {
 
 			@Override
 			public void handle(ActionEvent ae) {
-				if (gameDices[5].isSelected() && countAnzahlWürfe < 3) {
+				if (gameDices[5].isSelected() && countRolls < 3) {
 					gameDices[5].changeImageIfSelected();
-				} else if (countAnzahlWürfe < 3) {
+				} else if (countRolls < 3) {
 					gameDices[5].showToggleButton();
 				}
 
@@ -179,11 +181,11 @@ public class MapController implements Initializable {
 	@FXML
 	public void roll(ActionEvent event) {
 		rollButton.setText("Reroll");
-		this.countAnzahlWürfe++;
+		this.countRolls++;
 
 		
 			for (int i = 0; i < gameDices.length; i++) {
-				gameDices[i].roll(countAnzahlWürfe);
+				gameDices[i].roll(countRolls);
 
 				gameDices[i].showToggleButton();
 
@@ -192,7 +194,7 @@ public class MapController implements Initializable {
 			}
 
 	
-		if (countAnzahlWürfe == 3) {
+		if (countRolls == 3) {
 			rollButton.setDisable(true);
 		}
 
