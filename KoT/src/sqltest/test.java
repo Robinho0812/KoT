@@ -16,6 +16,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
+import application.Dice;
 import application.Monster;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
@@ -263,9 +264,74 @@ public class test {
 				}
 			}
 		}
+		
+		Monster m1 = new Monster();
+		
+	
+		
+		int dice1Value= 2;
+		int dice2Value= 3;
+		int dice3Value=	4;	// Werte der Würfelindexe in einen int speichern
+		int dice4Value= 0;
+		int dice5Value= 0;
+		int dice6Value= 0;
+		
+		switch (dice1Value) {
+		
+		case 3:
+			m1.setVictoryPoints(1);
+			break;
+			
+		case 4:
+			m1.setVictoryPoints(2);
+			break;
+			
+		case 5:
+			m1.setVictoryPoints(3);
+			break;
+			
+		case 6:
+			m1.setVictoryPoints(4);
+			break;
+		}
+		
+		switch (dice2Value){
+		
+		case 3:
+			m1.setVictoryPoints(2);
+			break;
+			
+		case 4:
+			m1.setVictoryPoints(3);
+			break;
+			
+		case 5:
+			m1.setVictoryPoints(4);
+			break;
+			
+		}
+		
+		switch (dice3Value) {
+		
+		case 3:
+			m1.setVictoryPoints(3);
+			break;
+			
+		case 4:
+			m1.setVictoryPoints(4);
+			break;
+			
+		case 5: 
+			m1.setVictoryPoints(5);
+		}
+		
+		System.out.println(m1.getCurrentVictoryPoints());
+		
 	}
 	
-	Monster m1 = new Monster();
+	
+	
+	
 	
 	
 }
