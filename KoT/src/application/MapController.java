@@ -222,7 +222,13 @@ public class MapController implements Initializable {
 			
 			System.out.println(dice1Value+" "+dice2Value+" "+dice3Value+ " "+ dice4Value+" "+dice5Value+" "+dice6Value );
 			
+		switch(dice1Value){
+		
+		case 3:
+			 m1.setVictoryPoints(1);
 			
+			
+		}
 		
 			
 		

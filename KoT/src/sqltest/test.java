@@ -16,6 +16,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
+import application.Monster;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -263,4 +264,8 @@ public class test {
 			}
 		}
 	}
+	
+	Monster m1 = new Monster();
+	
+	
 }

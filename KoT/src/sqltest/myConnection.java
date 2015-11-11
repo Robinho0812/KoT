@@ -24,7 +24,11 @@ import javax.crypto.spec.DESKeySpec;
 import com.mysql.jdbc.ResultSet;
 
 import sun.misc.BASE64Decoder;
-
+/**
+ * 
+ * @author Rene
+ *
+ */
 public class myConnection {
 
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -46,6 +50,9 @@ public class myConnection {
 	
 
 	// Verbindung herstellen
+	/**
+	 * 
+	 */
 	public static void openDb() {
 		try {
 			// JDBC laden und registrieren
@@ -70,7 +77,11 @@ public class myConnection {
 			e.printStackTrace();
 		}
 	}
-
+ /**
+  * 
+  * @param playerName
+  * @return
+  */
 	public static boolean isAvailable(String playerName) {
 		ResultSet rs = null;
 		try {
